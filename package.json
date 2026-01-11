@@ -1,0 +1,47 @@
+{
+  "name": "mse-playout",
+  "version": "1.0.0",
+  "description": "A library for managing media playout using MediaSource Extensions (MSE) with IndexedDB-backed playlist management",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "BUILD_MODE=demo rspack serve",
+    "build": "rspack build && tsc -p tsconfig.build.json",
+    "build:demo": "BUILD_MODE=demo rspack build",
+    "build:lib": "rspack build && tsc -p tsconfig.build.json",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mse",
+    "mediasource",
+    "playout",
+    "playlist",
+    "indexeddb",
+    "video",
+    "streaming"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rspack/cli": "^1.0.0",
+    "@rspack/core": "^1.0.0",
+    "@types/node": "^20.0.0",
+    "html-rspack-plugin": "^6.1.4",
+    "typescript": "^5.0.0"
+  }
+}
