@@ -24,7 +24,9 @@
     "build:demo": "BUILD_MODE=demo rspack build",
     "build:lib": "rspack build && tsc -p tsconfig.build.json",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "link:setup": "npm run build && npm link",
+    "link:watch": "npm run build && npm link && tsc -p tsconfig.build.json --watch"
   },
   "keywords": [
     "mse",

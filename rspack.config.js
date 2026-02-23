@@ -10,6 +10,9 @@ const isDemo = process.env.BUILD_MODE === 'demo';
 
 export default defineConfig({
   context: __dirname,
+  experiments: isDemo ? {} : {
+    outputModule: true,
+  },
   entry: isDemo ? {
     main: "./examples/demo.ts",
   } : {
@@ -51,8 +54,7 @@ export default defineConfig({
     path: join(__dirname, "dist"),
     filename: "[name].js",
     library: {
-      name: "MSEPlayout",
-      type: "umd",
+      type: "module",
     },
     globalObject: "this",
     clean: true,
